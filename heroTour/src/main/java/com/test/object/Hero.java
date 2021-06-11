@@ -6,4 +6,6 @@ import lombok.Data;
 public class Hero {
 	private Integer id;
 	private String name;
+	private Integer age;
+	private String img;
 }

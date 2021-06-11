@@ -1,0 +1,54 @@
+<!-- <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+    <div *ngIf="filePath && filePath !== ''">
+      <img [src]="filePath" [alt]="myForm.value.name">
+    </div>
+  
+    <input type="file" accept="image/*" (change)="imagePreview($event)" />
+  
+    <input formControlName="filename" placeholder="File name">
+  
+    <button type="submit">Upload</button>
+  </form> -->
+
+
+
+  <!--ok -->
+  <!-- <div class="container mt-5 text-center">
+
+    <h3 class="mb-5">Angular Image Crop Example</h3>
+  
+    <div class="col-md-12">
+      <input type="file" (change)="onFileChange($event)" />
+    </div>
+  
+    <div class="col-md-8">
+      <image-cropper 
+        [imageChangedEvent]="imgChangeEvt" 
+        [maintainAspectRatio]="true" 
+        [aspectRatio]="4 / 4"
+        [resizeToWidth]="256" 
+        format="png" 
+        (imageCropped)="cropImg($event)" 
+        (imageLoaded)="imgLoad()"
+        (cropperReady)="initCropper()" 
+        (loadImageFailed)="imgFailed()">
+      </image-cropper>
+    </div>
+  
+    <div class="col-md-4">
+      <h6>Image Preview</h6>
+      <img [src]="cropImgPreview" />
+    </div>
+  
+  </div> -->
+
+  <form #f = "ngForm">
+   
+    <br>
+    <input type="file" name="files" accept="image/*" (change)="onFileChanged($event)">
+    <br>
+    
+    <br>
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Upload</button>
+    </form>

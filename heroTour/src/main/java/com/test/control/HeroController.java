@@ -77,10 +77,10 @@ public class HeroController {
 	@ResponseBody
 	@PutMapping(Url.UPDATEHERO)
 	public void updateHero(@RequestBody Hero hero) {
-
 		heroService.updateHero(hero);
-
 	}
+	
+
 
 	/**
 	 * search Hero

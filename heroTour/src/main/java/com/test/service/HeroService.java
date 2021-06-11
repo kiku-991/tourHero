@@ -43,6 +43,8 @@ public class HeroService {
 		Hero h = new Hero();
 		h.setId(hero.getId());
 		h.setName(hero.getName());
+		h.setAge(hero.getAge());
+		h.setImg(hero.getImg());
 		return h;
 
 	}
@@ -54,6 +56,8 @@ public class HeroService {
 		HeroEntity hero = new HeroEntity();
 
 		hero.setName(heros.getName());
+		hero.setAge(hero.getAge());
+		hero.setImg(hero.getImg());
 		heroRepository.save(hero);
 	}
 
@@ -74,8 +78,53 @@ public class HeroService {
 		HeroEntity he = new HeroEntity();
 		he.setId(hero.getId());
 		he.setName(hero.getName());
+		he.setAge(hero.getAge());
+		//String old = hero.getImg();
+//		String newUrl = old.replace("C:\\fakepath\\", "");
+//		String nowUrl = Url.SRC + newUrl;
+		he.setImg(hero.getImg());
 		heroRepository.save(he);
+
+		//savePic(file, Url.SAVEPATH + newUrl);
+
 	}
+
+	/*private void savePic(MultipartFile file, String fileName) {
+	
+		OutputStream os = null;
+		try {
+			String path = "D:\\testFile\\";
+			// 2、保存到临时文件
+			// 1K的数据缓冲
+			byte[] bs = new byte[1024];
+			// 读取到的数据长度
+			int len;
+			// 输出的文件流保存到本地文件
+	
+			File tempFile = new File(path);
+			if (!tempFile.exists()) {
+				tempFile.mkdirs();
+			}
+			os = new FileOutputStream(tempFile.getPath() + File.separator + fileName);
+			// 开始读取
+			while ((len = file.getInputStream().read(bs)) != -1) {
+				os.write(bs, 0, len);
+			}
+	
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 完毕，关闭所有链接
+			try {
+				os.close();
+				file.getInputStream().close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}*/
 
 	/**
 	 * search Hero by keyword

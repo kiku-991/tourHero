@@ -13,5 +13,11 @@ public class Url {
 	public static final String UPDATEHERO = "/heroes/update";
 	//search Hero
 	public static final String SEARCHHERO = "/heroes/name/{key}";
+	
+	//path
+	public static final String SAVEPATH = "D:\\angular2\\tour-of-heroes\\src\\assets\\img\\";
 
+
+	//imgフォルダに画像
+	public static final String SRC = "assets/img/";
 }

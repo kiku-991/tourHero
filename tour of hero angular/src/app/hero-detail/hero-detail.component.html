@@ -1,10 +1,26 @@
 <div *ngIf="hero">
     <h2>{{hero.name | uppercase }} Details</h2>
+
+    <div>
+        <img [src]="hero.img" width="80" height="80">
+
+        <input type="file" accept="image/*"  (change)="onFileChanged($event)">
+      
+    </div>
     <div><label>id: </label> {{hero.id}}</div>
+    <br>
     <div>
         <label for="hero-name">Hero name:</label>
         <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
     </div>
+    <br>
+    <div>
+        <label for="hero-name">Hero age:</label>
+        <input id="hero-age" [(ngModel)]="hero.age" placeholder="age">
+    </div>
+   
     <button (click)="goBack()">go back</button>
     <button (click)="save()">save</button>
 </div>
+
+<!-- <app-upload></app-upload> -->
